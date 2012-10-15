@@ -1,6 +1,6 @@
-jango VerifyCode
+Django VerifyCode
 =================
-在django中生成验证码的例子
+在Django中生成验证码的例子
 demo
 ----
 
