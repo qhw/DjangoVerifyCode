@@ -3,34 +3,13 @@ from django.http import HttpResponse
 import Image,ImageDraw,ImageFont,random,StringIO
 import os
 
-
+current_path = os.path.normpath(os.path.dirname(__file__))
 class Code(object):
 
     def __init__(self,request):
         self.django_request = request
         self.session_key = 'django-verify-code'
-        self.worlds = [
-            'about',
-            'bronze',
-            'blouse',
-            'china',
-            'complex',
-            'document',
-            'django',
-            'facebook',
-            'finally',
-            'freezer',
-            'github',
-            'google',
-            'instance',
-            'linux',
-            'lambda',
-            'mysql',
-            'object',
-            'python',
-            'syntax',
-            'twitter',
-        ]
+        self.worlds = self._get_worlds()
         # 验证码图片尺寸
         self.img_width = 150
         self.img_height = 30
@@ -40,9 +19,13 @@ class Code(object):
         self.background = (random.randrange(230,255),random.randrange(230,255),random.randrange(230,255))
         # 字体大小 
         font_size = 24
-        current_path = os.path.normpath(os.path.dirname(__file__))
         # 字体
         self.font = ImageFont.truetype(os.path.join(current_path,'timesbi.ttf').replace('\\','/'),font_size)
+
+    def _get_worlds(self):
+        file_path = os.path.join(current_path,'worlds.list')
+        f = open(file_path,'r')
+        return [line.replace('\n','') for line in f.readlines()]
 
     def display(self):
         """ django 单词验证码生成 """
@@ -51,8 +34,7 @@ class Code(object):
         self.django_request.session[self.session_key] = '' 
         # creat a image
         im = Image.new('RGB',(self.img_width,self.img_height),self.background)
-        #code = random.sample(string['litter'],4)
-        code = self.worlds[random.randrange(0,len(self.worlds))]
+        code = random.sample(self.worlds,1)[0]
         # creat a pen
         draw = ImageDraw.Draw(im)
 
