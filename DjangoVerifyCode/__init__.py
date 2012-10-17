@@ -7,6 +7,9 @@ current_path = os.path.normpath(os.path.dirname(__file__))
 class Code(object):
 
     def __init__(self,request):
+        """
+        初始化,设置各种属性
+        """
         self.django_request = request
         self.session_key = 'django-verify-code'
         self.worlds = self._get_worlds()
@@ -19,16 +22,21 @@ class Code(object):
         self.background = (random.randrange(230,255),random.randrange(230,255),random.randrange(230,255))
         # 字体大小 
         font_size = 24
-        # 字体
+        # 字体文件
         self.font = ImageFont.truetype(os.path.join(current_path,'timesbi.ttf').replace('\\','/'),font_size)
 
     def _get_worlds(self):
+        """
+        读取默认的单词表
+        """
         file_path = os.path.join(current_path,'worlds.list')
         f = open(file_path,'r')
         return [line.replace('\n','') for line in f.readlines()]
 
     def display(self):
-        """ django 单词验证码生成 """
+        """ 
+        验证码生成 
+        """
 
         # the worlds list maxlength = 8
         self.django_request.session[self.session_key] = '' 
@@ -48,6 +56,7 @@ class Code(object):
         # 写验证码
         x = random.randrange(10,20)
         for i in code:
+            # 上下抖动量
             y = random.randrange(0,5)
             draw.text((x,y), i, font=self.font, fill=random.choice(self.font_color))
             x += 16
@@ -60,9 +69,10 @@ class Code(object):
         return HttpResponse(buf.getvalue(),'image/gif')
 
     def check(self,code):
-        """ 检查用户输入的验证码是否正确 """
+        """ 
+        检查用户输入的验证码是否正确 
+        """
         _code = self.django_request.session.get(self.session_key) or ''
         code = str(code).lower()
         return _code.lower() == code
-
 
