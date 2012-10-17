@@ -3,8 +3,15 @@ DjangoVerifyCode
 在Django中生成验证码
 使用
 ---
+####安装####
+```
+pip install DjangoVerifyCode
+or
+easy_install DjangoVerifyCode
+```
 ####显示验证码(views.py)####
 ```
+from DjangoVerifyCode import Code
 def code(request):
     code = Code(request)
     return code.display()
@@ -12,6 +19,7 @@ def code(request):
 
 ####检查用户输入的验证码是否正确(views.py)####
 ```
+from DjangoVerifyCode import Code
 def index(request):
     _code = request.GET.get('code') or ''
     if not _code:
@@ -29,7 +37,3 @@ def index(request):
 + PIL
 + Django >= 1.3
 
-demo
-----
-
-+ <http://djangoverifycode.t-y.me>
