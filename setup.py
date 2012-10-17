@@ -1,13 +1,14 @@
 #encoding:utf-8
 from distutils.core import setup  
+import DjangoVerifyCode as dvc
 setup(name='DjangoVerifyCode',  
-      author='TY',  
+      author='TY(pythoner.net)',  
       author_email='tianyu0915@gmail.com',  
-      version='0.1.1',  
+      version='0.1.2',  
       description='django验证码',  
       keywords ='django verify code 验证码',
-      #install_requires=["Django>=1.0","PIL>=1.1"],
-      url='http://github.com/tianyu0915',  
+      url='http://github.com/tianyu0915/DjangoVerifyCode',  
       packages=['DjangoVerifyCode'],  
       package_data={'DjangoVerifyCode':['*.*','DjangoVerifyCode/*.*']},
+
 )  

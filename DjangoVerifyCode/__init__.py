@@ -3,13 +3,6 @@ from django.http import HttpResponse
 import Image,ImageDraw,ImageFont,random,StringIO
 import os
 
-##########################
-# author:tianyu0915
-# site:pythoner.net
-# date:2011-7-10
-##########################
-__version__ = '0.1'
-__author__  = 'TY'
 
 class Code(object):
 
