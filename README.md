@@ -49,6 +49,7 @@ def index(request):
 + PIL
 
 了解更多
+--------
 + <http://pythoner.net>
 + <http://pypi.python.org/pypi/DjangoVerifyCode>
 
