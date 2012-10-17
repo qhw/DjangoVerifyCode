@@ -1,6 +1,6 @@
 DjangoVerifyCode
 =================
-在Django中生成英文单词验证码
+在Django中生成英文单词验证码,原用于[pythoner.net](http://pythoner.net)的验证码,现整理出来打包发布到pypi.
 使用
 ---
 ####安装####
@@ -47,4 +47,8 @@ def index(request):
 依赖
 ----
 + PIL
+
+了解更多
++ <http://pythoner.net>
++ <http://pypi.python.org/pypi/DjangoVerifyCode>
 
