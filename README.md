@@ -1,6 +1,6 @@
 DjangoVerifyCode
 =================
-在Django中生成验证码
+在Django中生成英文单词验证码
 使用
 ---
 ####安装####
@@ -32,8 +32,19 @@ def index(request):
         return HttpResponse('验证失败')
 ```
 
+自定义
+-----
+用户可根据自己的需要对DjangoVerifyCode.Code对象的属性进行设置
+##### 输出图片的宽度 #####
+`code.img_width` = 150
+##### 输出图片的高度 #####
+`code.img_height` = 30
+##### 验证码字体颜色 #####
+`code.font_color` = ['black','darkblue','darkred']
+##### 字体大小 #####
+`font_size` = 24
+
 依赖
 ----
 + PIL
-+ Django >= 1.3
 

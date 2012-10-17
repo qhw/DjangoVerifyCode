@@ -8,8 +8,8 @@ from DjangoVerifyCode import Code
 
 def code(request):
     code =  Code(request)
+    #code.worlds = ['hello','world']
     return code.display()
-
 
 def index(request):
     _code = request.GET.get('code') or ''
