@@ -48,8 +48,9 @@ def index(request):
 ----
 + PIL
 
-了解更多
---------
+More
+----
++ demo <http://dvf.t-y.me>
 + <http://pythoner.net>
 + <http://pypi.python.org/pypi/DjangoVerifyCode>
 
