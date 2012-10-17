@@ -50,7 +50,7 @@ def index(request):
 
 More
 ----
-+ demo <http://dvf.t-y.me>
++ demo <http://dvf.pythoner.net>
 + <http://pythoner.net>
 + <http://pypi.python.org/pypi/DjangoVerifyCode>
 
