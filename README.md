@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 DjangoVerifyCode
 =================
 在Django中生成验证码
