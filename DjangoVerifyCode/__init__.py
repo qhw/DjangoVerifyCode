@@ -140,8 +140,7 @@ class Code(object):
         del x
         del draw
         buf = StringIO.StringIO()
-        im.save(buf,'jpeg')
-        #im.save(buf,'gif')
+        im.save(buf,'gif')
         buf.closed
         return HttpResponse(buf.getvalue(),'image/gif')
 
