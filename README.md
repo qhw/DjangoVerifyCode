@@ -1,6 +1,10 @@
-DjangoVerifyCode
-=================
-在Django中生成英文单词验证码,原用于[pythoner.net](http://pythoner.net)的验证码,现整理出来打包发布到pypi.
+DjangoVerifyCode v0.1.3
+=======================
+介绍
+----
+在django中生成英文单词验证码,提供验证码图片生成,检查验证码等功能
+原用于[pythoner.net](http://pythoner.net)的验证码,现整理出来打包发布到pypi.
+
 使用
 ---
 ####安装####
