@@ -5,10 +5,11 @@ import os
 from django.shortcuts import render_to_response as render
 from DjangoVerifyCode import Code
 
-
 def code(request):
     code =  Code(request)
-    #code.worlds = ['hello','world']
+    code.worlds = ['hello','world','helloworld']
+    #code.type = 'world'
+    code.type = 'number'
     return code.display()
 
 def index(request):
@@ -18,6 +19,6 @@ def index(request):
 
     code = Code(request)
     if code.check(_code):
-        return HttpResponse('验证码输入正确')
-    return HttpResponse('验证码输入错误')
+        return HttpResponse("""<h1>^_^</h1>""")
+    return HttpResponse("""<h1>:-(</h1>""")
 

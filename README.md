@@ -1,9 +1,18 @@
-DjangoVerifyCode v0.1.3
+DjangoVerifyCode v0.2.0
 =======================
 介绍
 ----
 在django中生成英文单词验证码,提供验证码图片生成,检查验证码等功能
 原用于[pythoner.net](http://pythoner.net)的验证码,现整理出来打包发布到pypi.
+##### 英文字母模式
+![code](http://otho.douban.com/view/photo/photo/4tBuTkc4AX7yIxkMzvPokQ/x1744193832.jpg) 
+##### 数字计算模式
+![code](http://otho.douban.com/view/photo/photo/RaJNqd430Bw28AgrIvz3BA/x1744193820.jpg)
+
+#####新特性
++ 新增数字计算模式
++ 字体尺寸根据图片长宽自适应
+
 
 使用
 ---
@@ -17,7 +26,10 @@ easy_install DjangoVerifyCode
 ```
 from DjangoVerifyCode import Code
 def code(request):
-    code = Code(request)
+    code =  Code(request)
+    code.worlds = ['hello','world','helloworld']
+    #code.type = 'world'
+    code.type = 'number'
     return code.display()
 ```
 
@@ -39,14 +51,12 @@ def index(request):
 自定义
 -----
 用户可根据自己的需要对DjangoVerifyCode.Code对象的属性进行设置
-##### 输出图片的宽度 #####
+##### 输出图片的宽度 
 `code.img_width` = 150
-##### 输出图片的高度 #####
+##### 输出图片的高度 
 `code.img_height` = 30
-##### 验证码字体颜色 #####
-`code.font_color` = ['black','darkblue','darkred']
-##### 字体大小 #####
-`font_size` = 24
+##### 设置验证码类型('number'/'world')
+`code.type = 'number'`
 
 依赖
 ----
