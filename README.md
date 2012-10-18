@@ -6,7 +6,7 @@ DjangoVerifyCode v0.2.0
 原用于[pythoner.net](http://pythoner.net)的验证码,现整理出来打包发布到pypi.
 
 #### 新特性
-+ 新增数字计算模式
++ 新增数字验证码模式
 + 字体尺寸根据图片长宽自适应
 
 
