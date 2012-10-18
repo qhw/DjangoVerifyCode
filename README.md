@@ -4,10 +4,6 @@ DjangoVerifyCode v0.2.0
 ----
 在django中生成英文单词验证码,提供验证码图片生成,检查验证码等功能
 原用于[pythoner.net](http://pythoner.net)的验证码,现整理出来打包发布到pypi.
-##### 英文字母模式
-![code](http://otho.douban.com/view/photo/photo/4tBuTkc4AX7yIxkMzvPokQ/x1744193832.jpg) 
-##### 数字计算模式
-![code](http://otho.douban.com/view/photo/photo/RaJNqd430Bw28AgrIvz3BA/x1744193820.jpg)
 
 #####新特性
 + 新增数字计算模式
