@@ -63,5 +63,3 @@ More
 + demo <http://dvf.pythoner.net>
 + <http://pythoner.net>
 + <http://pypi.python.org/pypi/DjangoVerifyCode>
-
->>>>>>> 2252f20cb7cb28e1f409fe7afb6452f7b3975824
